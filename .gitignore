@@ -1,0 +1,6 @@
+/.vscode
+/__pycache__
+/resources/__pycache__
+/resources/impostos/__pycache__
+/services/__pycache__
+.python-version
