@@ -25,8 +25,9 @@ class CalculateIrpf:
             aliquot = 0.275
             value = 869.36
 
-        irpf_base_value = salary - inss
-        total = (irpf_base_value - dependents) * aliquot
+        irpf_base_value = (salary - inss) - dependents
+        irpf_aliquot_value = (irpf_base_value * aliquot)
+        total = irpf_aliquot_value - value
 
         return {
             'value': float("{0:.2f}".format(value)),
