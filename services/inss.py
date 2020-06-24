@@ -6,19 +6,28 @@ class CalculateInssAliquot:
         if salary <= 1045:
             return salary * 0.075
         elif salary > 1045 and salary <= 2089.60:
-            base_one = salary * 0.075
-            base_two = (salary - 1045) * 0.09
-            return base_one + base_two
+            result_one = 1045 * 0.075
+            result_two = (salary - 1045) * 0.09
+            return result_one + result_two
         elif salary > 2089.60 and salary <= 3134.4:
-            base_one = salary * 0.075
-            base_two = (2089.60 - 1045) * 0.09
-            base_three = (salary - 2089.60) * 0.12
-            return base_one + base_two + base_three
+            first_base = 1045
+            second_base = 2089.60 - 1045
+            third_base = salary - first_base - second_base
+
+            result_one = first_base * 0.075
+            result_two = second_base * 0.09
+            result_three = third_base * 0.12
+            return result_one + result_two + result_three
         elif salary > 3134.4 and salary <= 6101.06:
-            base_one = salary * 0.075
-            base_two = (2089.60 - 1045) * 0.09
-            base_three = (3134.4 - 2089.60) * 0.12
-            base_four = (salary - 3134.4) * 0.14
-            return base_one + base_two + base_three + base_four
+            first_base = 1045
+            second_base = 2089.60 - 1045
+            third_base = 3134.4 - first_base - second_base
+            fourth_base = salary - first_base - second_base - third_base
+
+            result_one = first_base * 0.075
+            result_two = second_base * 0.09
+            result_three = third_base * 0.12
+            result_four = fourth_base * 0.14
+            return result_one + result_two + result_three + result_four
         else:
             return 713.1
