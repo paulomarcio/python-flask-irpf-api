@@ -18,4 +18,4 @@ class Irpf(Resource):
         inss = CalculateInssAliquot.execute(salary)
         irpf = CalculateIrpf.execute(salary, inss, dependents)
 
-        return {'aliquota': irpf['aliquot'], 'parcela': irpf['value'], 'dependentes': irpf['dependents'], 'irpf': irpf['total']}
+        return {'aliquota': irpf['aliquot'], 'parcela': irpf['value'], 'inss': float("{0:.2f}".format(inss)), 'dependentes': irpf['dependents'], 'irpf': irpf['total']}
